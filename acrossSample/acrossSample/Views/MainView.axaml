@@ -1,0 +1,55 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:acrossSample.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="acrossSample.Views.MainView"
+             xmlns:co="clr-namespace:acrossSample.Common"
+             Foreground="White"
+             Background="#171C2C">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<viewModels:MainViewModel />
+	</Design.DataContext>
+	
+	<UserControl.Styles>
+		
+	</UserControl.Styles>
+	
+	<StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+		<TransitioningContentControl Content="{Binding SelectImage}" Width="200" Height="200" BorderThickness="2" BorderBrush="red" ClipToBounds="True">
+			<TransitioningContentControl.PageTransition>
+				<PageSlide Orientation="Horizontal" Duration="0:00:00.300" />
+			</TransitioningContentControl.PageTransition>
+			<TransitioningContentControl.ContentTemplate>
+				<DataTemplate DataType="Bitmap">
+					<Border BorderBrush="red" BorderThickness="2">
+						<Image Source="{Binding}"  Stretch="Fill"/>
+					</Border>
+				</DataTemplate>
+			</TransitioningContentControl.ContentTemplate>
+		</TransitioningContentControl>
+		<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,20,0,20">
+			<Button Command="{Binding onNext}">preview One</Button>
+			<Button Command="{Binding onPreview}" >next One</Button>
+			
+			<Button Command="{Binding NextCommand}" CommandParameter="11111">preview One2</Button>
+			<Button Command="{Binding PreviewCommand}" CommandParameter="2222" >next One2</Button>
+		</StackPanel>
+		
+		<Panel>
+			<Border BorderBrush="yellow" BorderThickness="2">
+				<Border Height="50" Width="50" Background="green" BorderBrush="gray" BorderThickness="2">
+					<Border.RenderTransform>
+						<TranslateTransform X="50" Y="100"></TranslateTransform>
+					</Border.RenderTransform>
+				</Border>
+			</Border>
+		</Panel>
+		<Button Content="sdasd" Width="200"></Button>
+	</StackPanel>
+	
+	
+</UserControl>

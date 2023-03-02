@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+    <TrimmerRootDescriptor Include="Roots.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Assets\jpg\00000.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00001.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00002.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00003.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00004.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00005.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00006.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00007.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00008.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00009.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00010.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00011.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00012.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00013.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00014.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00015.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00016.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00017.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00018.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00019.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00020.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00021.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00022.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00023.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00024.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00025.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00026.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00027.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00028.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00029.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00030.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00031.jpg" />
+    <UpToDateCheckInput Remove="Assets\jpg\00032.jpg" />
+  </ItemGroup>
+</Project>
